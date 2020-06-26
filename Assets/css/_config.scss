@@ -1,12 +1,18 @@
-$PrimaryColor: #252934;
+$PrimaryColor: #444;
 $secondary-color: #eece1a;
+$border-color:#242423;
 $show-image: true;
 $background-image: url(../img/background1.jpg);
-$background-opacity:0.7;
+$background-opacity:0.9;
 $menu-speed: 0.75s;
 
 @mixin tranzicija{
     transition: all 0.5s ease-out;
+}
+
+@mixin opacityBackground{
+    background-color: rgba($PrimaryColor, $background-opacity);
+    border-top: 4px solid $border-color;
 }
 
 @mixin background {
@@ -35,27 +41,36 @@ $menu-speed: 0.75s;
     }
 }
 
+// Text Color
+@function set-text-color($PrimaryColor) {
+    @if(lightness($PrimaryColor)>40){
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
 // Media Query Mixins 
 
-@mixin maliEkran {
+@mixin mediaSm {
     @media screen and (max-width: 500px) {
         @content;
     }
 }
 
-@mixin srednjiEkran {
+@mixin mediaMd {
     @media screen and (max-width: 768px) {
         @content;
     }
 }
 
-@mixin velikiEkran {
+@mixin mediaLg {
     @media screen and (min-width: 769px) and (max-width: 1170px){
         @content;
     }
 }
 
-@mixin velikiEkran1 {
+@mixin mediaXl {
     @media screen and (min-width: 1171px) {
         @content;
     }
