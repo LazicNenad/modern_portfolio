@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="Assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="shorcut icon" type="image/png" href="assets/img/favicon.ico"/>
     <title>Welcome To My Portfolio!</title>
 </head>
 <body id='background-image'>
     <header class="meni-veliki">
-        <input type="checkbox" class="toggler">
+         <!-- <input type="checkbox" class="toggler">
         <div class="hamburger"><div></div></div>
         <div class="menu">
           <div>
@@ -23,8 +24,8 @@
               </ul>
             </div>
           </div>
-        </div>
-    </header>
+        </div> -->
+    </header> 
 
     <main id='home'>
         <h1 class='veliki-tekst'>Nenad <span class='druga-boja'>Lazić</span></h1>  
@@ -35,55 +36,158 @@
         </div>
     </main>
 
-    <div class='main2' id='aboutme'>
-      <div class="sredina">
-        <h1 class='veliki-tekst tekst-gore'>About <span class='druga-boja'>Me</span></h1>  
-      </div>
+    <div class="main2">
+      <h1 class="veliki-tekst">
+        About
+        <span class="druga-boja">Me</span>
+      </h1>
+      <h2 class="mali-tekst">Let me tell you a few things...</h2>
       <div class="about-info">
-          <img src="Assets/img/portret2.png" alt="Nenad Lazic" class="image">
-          <div class="about-info-bio">
-            <h3 class="druga-boja bio-h3">BIO</h3>
-            <p class='bio-text'>Hello, my name is Nenad Lazić and I'm a future web developer.
-              I am studying Internet Tehnologies at ICT College in Belgrade, Serbia.
-              I am very passionate about web programming.
-              Although I didn't have much projects so far due to the fact that I am a begginer, I'm hard-working person and open for new opportunities and work experience.
-              Looking forward to my future projects.</p>
-          </div>
-      </div> 
-      <div class="donji-deo">
-          <div class="naslov-dole">
-            <h2 class='tekst-dole'>My <span class='druga-boja'>Skills</span></h2>
-          </div>
-          <div class="skillboxes">
-            <div class="skillbox">
-              <h6 class='h6-edit'>HTML</h6>
-              <i class="fab fa-html5 fa-4x"></i>
-            </div>
-            <div class="skillbox">
-              <h6 class='h6-edit'>CSS3 </h6>
-              <i class="fab fa-css3-alt fa-4x"></i>
-            </div>
-            <div class="skillbox">
-              <h6 class='h6-edit'>Bootstrap</h6>
-              <i class="fab fa-bootstrap fa-4x"></i>
-            </div>
-              <div class="skillbox">
-                <h6 class='h6-edit'>SQL</h6>
-                <i class="fas fa-database fa-4x"></i>
+        <img src="Assets/img/portret2.png" alt="Nenad Lazic" class="bio-image">
+
+        <div class="bio">
+          <h3 class="druga-boja">About Me</h3>
+          <p>Name:  <span class='druga-boja'>Nenad</span></p>
+          <p>Surname:  <span class='druga-boja'>Lazić</span></p>
+          <p>Country:  <span class='druga-boja'>Serbia</span></p>
+          <p>Age:  <span class='druga-boja'>23</span></p>
+          <p>School:  <span class='druga-boja'>Visoka ICT - Belgrade</span></p>
+        </div>
+
+        <div class="more-about">
+          <h3 class="druga-boja">My Skills</h3>
+          <div class="container">
+            <div class="card">
+              <div class="box">
+                <div class="percent">
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                  <div class="number">
+                    <h2>90 <span>%</span></h2>
+                  </div>
+                </div>
+                <h2 class='text'>HTML (4,5)</h2>
               </div>
-              <div class="skillbox">
-                <h6 class='h6-edit'>SASS</h6>
-                <i class="fab fa-sass fa-4x"></i>
+            </div>
+            <div class="card">
+              <div class="box">
+                <div class="percent">
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                  <div class="number">
+                    <h2>95 <span>%</span></h2>
+                  </div>
+                </div>
+                <h2 class='text'>CSS (2,3)</h2>
               </div>
-              <div class="skillbox">
-                <h6 class='h6-edit'>less</h6>
-                <i class="fab fa-less fa-4x"></i>
+            </div>
+            <div class="card">
+              <div class="box">
+                <div class="percent">
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                  <div class="number">
+                    <h2>75 <span>%</span></h2>
+                  </div>
+                </div>
+                <h2 class='text'>Bootstrap</h2>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <div class="percent">
+                  <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70"></circle>
+                  </svg>
+                  <div class="number">
+                    <h2>90 <span>%</span></h2>
+                  </div>
+                </div>
+                <h2 class='text'>MySQL</h2>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class='more-about-me'>
+          <h2 class="druga-boja">More About Me</h2>
+          <p class='tekst-o-meni'>Hello my name is Nenad Lazić, I'm from Serbia and I'm passionate about coding.First I started learning from home, then i entered school for IT Technology called Visoka ICT skola in Belgrade. </p>
         </div>
       </div>
     </div>
 
-      <div class="main3" id='contact'>
+    <div class="main3">
+      <h1 class="veliki-tekst">
+        My
+        <span class="druga-boja">Work</span>
+      </h1>
+      <h2 class="mali-tekst">Let me show you some of my projects</h2>
+      <div class="projects">
+        <div class="item">
+          <a href="#">
+            <img src="Assets/img/projects/project6.jpg" alt="project">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye">    Project</i>
+          </a>
+          <a href="#" class="btn-dark">
+            <i class="fab fa-github">    Github</i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="Assets/img/projects/project2.jpg" alt="project">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye">    Project</i>
+          </a>
+          <a href="#" class="btn-dark">
+            <i class="fab fa-github">    Github</i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="Assets/img/projects/project3.jpg" alt="project">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye">    Project</i>
+          </a>
+          <a href="#" class="btn-dark">
+            <i class="fab fa-github">    Github</i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="Assets/img/projects/project4.jpg" alt="project">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye">    Project</i>
+          </a>
+          <a href="#" class="btn-dark">
+            <i class="fab fa-github">    Github</i>
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            <img src="Assets/img/projects/project5.jpg" alt="project">
+          </a>
+          <a href="#" class="btn-light">
+            <i class="fas fa-eye">    Project</i>
+          </a>
+          <a href="#" class="btn-dark">
+            <i class="fab fa-github">    Github</i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main4" id='contact'>
         
           <h1 class='veliki-tekst'>Contact <span class='druga-boja'>Me</span></h1>  
           <h2 class='mali-tekst'>This is how you can reach me</h2>  
@@ -102,11 +206,11 @@
       </div>
       <footer>
         <div class="sass">
-          <a href="">SASS/Mini CSS</a>
-          <a href="">Sitemap</a>
-          <a href="">Original CSS</a>
-          <p>Copyright &copy; Nenad Lazić</p>
+          <a href="https://github.com/Nenad67/modern_portfolio/tree/master/Assets/css">SASS</a>
+          <a href="https://github.com/Nenad67/modern_portfolio/blob/master/sitemap.xml">Sitemap</a>
+          <a href="https://github.com/Nenad67/modern_portfolio/blob/master/Assets/css/main.css">Original CSS</a>
         </div>
+        <p class='footer-p'>Copyright &copy; Nenad Lazić</p>
       </footer>
 </body>
 </html>
