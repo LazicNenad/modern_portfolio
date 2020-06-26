@@ -9,8 +9,7 @@
 
 body{
    @include background();
-   background-color: $PrimaryColor;
-   color:#fff;
+   color: set-text-color($PrimaryColor);
    line-height: 1.5;
    font-family: 'Roboto', sans-serif;
    height:100vh;
@@ -60,25 +59,24 @@ main{
 
            i{
                &.fa-facebook{
-                  color:#4267B2;
+                  color:#fff;
                    
                    &:hover{
                     //    color:#3b5998;
                        @include tranzicija();
                        opacity:0.7;
+                       color: $secondary-color;
                    }
                }
 
                &.fa-instagram{
-                background: #d6249f;
-                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                background: #fff;
                 background-clip:text;
                 -webkit-background-clip: text;
-	            -webkit-text-fill-color: transparent;
-                
-                &:hover{
-                    opacity: 0.7;
-                    @include tranzicija();
+                    &:hover{
+                        @include tranzicija();
+                        color: $secondary-color;
+                    
                 }
                }
            }
@@ -93,113 +91,148 @@ main{
 }
 
 .main2{
-    border-top: 4px solid #181a21;
-    padding: 2rem;
-    background-color: rgba($PrimaryColor, 1);
-    height: 100vh;
-
-    .sredina{
-       text-align: center;
-       margin-bottom: 2.5rem;
-
-    }
-
+    @include opacityBackground;
+    padding: 3.5rem;
 
     .about-info{
-        width: 90%;
-        min-height: 20vh;
-        margin:auto;
-        display:flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        display:grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        .image {
-            height: 20vh;
-            border: 3px solid rgba($secondary-color, 1);
-            border-radius: 50%;
-            width: 20;
-            
+    .bio-image{
+       margin: auto;
+       width: 180px;
+       border-radius: 50%;
+       border: $secondary-color 3px solid;
+    }
+
+    .bio{
+       font-size: 1.5rem;
+
+       
+    }
+
+    .more-about{
+        //grid-column: 1/4;
+        background: lighten($PrimaryColor, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+        h3.druga-boja{
+            text-align: center;
+            font-size: 2rem;
         }
+       .container{
+           display:flex;
+           justify-content: space-around;
+           position: relative;
+           .card{
+               position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 300px;
+               text-align: center;
+               overflow: hidden;
+               transition: 0.5s;
 
-        .about-info-bio{
-            height: 20vh;
-            margin-left: 2rem;
-            flex:2;
+               &:hover{
+                   transform: translateY(-10px);
+               }
 
-            h3{
-                margin-left: 10px;
-                font-size: 3rem;
-            }
+               &:before{
+                   content: '';
+                   position: absolute;
+                   top:0;
+                   left:0;
+                   width: 100%;
+                   height: 100%;
+                   pointer-events: none;
+                   z-index: 1;
+               }
+               .box{
+                   
+                   .percent{
+                       position: relative;
+                       widows: 150px;
+                       height: 150px;
+                       border-radius: 50%;
+                       box-shadow: inset 0 0 50px #000;
+                       background: #222;
+                       z-index: 20;
 
-            p{
-                font-size: 1.1em;
-                line-height: 1.5;
-                text-align: center;
-            }
+                       .number{
+                           position: absolute;
+                           top: 0;
+                           left: 0;
+                           width: 100%;
+                           height: 100%;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           border-radius: 50%;
+
+                           h2{
+                               color: #fff;
+                               font-weight: 500;
+                               font-size: 28px;
+                               transition: 0.5s;
+
+                               span{
+                                   font-size: 24px;
+                                   color:#fff;
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+       }
+ 
+    }
+    .more-about-me{
+        width:350px;
+        h2{
+            font-size: 2rem;
         }
-        
-
-
     }
 }
 
-.donji-deo{
-    width: 95%;
-    margin: auto;
 
-    h2{
+// My work
+.main3{
+    @include opacityBackground;
+    padding: 3.5rem;
+    h1.veliki-tekst{
         text-align: center;
-        font-size: 5rem;
     }
+    .projects {
+        position: relative;
+        display: grid;
+        grid-gap: 0.7rem;
+        grid-template-columns: repeat(3, 1fr);
 
-    .naslov-dole{
-        margin-top: 40px;
-    }
-
-    .skillboxes{
-        width: 95%;
-        height: 40vh;
-        margin:auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 3%;
-        background-color: #949bd6;
-        border-radius: 6px;
-
-        .skillbox{
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-
-            .h6-edit{
-                color: #000;
-                font-size: 1.5rem;
-                margin-bottom: 1.2rem;
-            }
-
-            i{
-                color: #000;
-                font-size: 4rem;
-
+        .item{
+            
+            img{
+                width:100%;
+                border: 3px #fff solid;
+                opacity: 0.5;
                 &:hover{
-                    @include tranzicija;
                     opacity: 0.8;
+                    border-color: $secondary-color;
+                    @include tranzicija;
                 }
             }
         }
+
+        
     }
 }
 
-.main3{
-    background: rgba($PrimaryColor, 0.9);
-    height: 70vh;
-    border-top: 4px solid #181a21;
+.main4{
+    background: rgba($PrimaryColor, $background-opacity);
+    border-top: 4px solid $border-color;
     h1.veliki-tekst{
         text-align: center;
     }
@@ -235,28 +268,114 @@ main{
 }
 
 footer{
-    border-top: 4px solid #181a21;
-    border-bottom: 4px solid #181a21;
-    height:22vh;
+    border-top: 4px solid $border-color;
+    border-bottom: 4px solid $border-color;
     background: rgba($PrimaryColor, 1);
     .sass{
         display:flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-around;
         align-items: center;
-        padding-top: 3rem;
+        padding-top: 1rem;
         padding-bottom: 1rem;
-        p{
-            display:inline-block;
-            margin-top:20px;
-            font-size: 1.2rem;
-          
         }
-
         a{
-            color:#59617a;
+            color:$border-color;
             text-decoration: none;
             font-size: 1.1rem;
+            &:hover{
+                //opacity: 0.8;
+                color: #000;
+                @include tranzicija;
         }
     }
+    p.footer-p{
+        display: block;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+        padding-right: 3rem;
+    }
 }
+
+//button style
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+
+    &:hover{
+        background-color: $secondary-color;
+        color: set-text-color($secondary-color);
+        transition: 0.2s ease-out;
+    }
+}
+
+.btn-dark{
+   @extend .btn;
+   background: darken($PrimaryColor, 50);
+   color: #fff;
+}
+
+.btn-light{
+    @extend .btn;  
+    background: lighten($PrimaryColor, 50);
+   color: #333;
+}
+
+// circles
+.text{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.card:hover .text{
+    color: $secondary-color;
+}
+svg{
+    width: 150px;
+    
+}
+svg circle{
+    width:100%;
+    height: 100%;
+    fill:none;
+    stroke: #191919;
+    stroke-width: 5;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+
+}
+
+svg circle:nth-child(2){
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+.card:nth-child(1) circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (440 * 90) / 100);
+    stroke:$secondary-color;
+}
+
+.card:nth-child(2) circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (440 * 95) / 100);
+    stroke:$secondary-color;
+}
+
+.card:nth-child(3) circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (440 * 75) / 100);
+    stroke: $secondary-color;
+}
+
+.card:nth-child(4) circle:nth-child(2){
+    stroke-dashoffset: calc(440 - (440 * 90) / 100);
+    stroke: $secondary-color;
+}
+
